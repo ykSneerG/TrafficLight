@@ -1,6 +1,4 @@
-Traffic Light
-
-This is a ...
+cooming...
 
 pip install flask
 pip install RPi.GPIO
