@@ -2,7 +2,7 @@ import json
 from flask import Flask, render_template, request
 from traffic import Signal, Light
 
-version = "Traffic Light V2.1 - 01/2024"
+version = "Traffic Light V2.2 - 01/2024"
 
 signals = [
     Signal(21, "red", "#ff0000"),
@@ -26,7 +26,7 @@ def status() -> str:
     return json.dumps(result)
 
 
-@app.route('/control')
+@app.route('/control', methods = ['GET'])
 def control():
     # here we want to get the value of user (i.e. ?signal=green)
     signal = request.args.get('signal', '')

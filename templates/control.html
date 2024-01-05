@@ -17,13 +17,17 @@
     {% for item in status %}
       <form action="/control" method="get">
         <input type="hidden" name="signal" value="{{ item['color'] }}">
-        <input type="submit" value="{{ item['color'] | upper }}" class="btn" style="background-color: {{ item['hex']|e }};">
+        <input type="submit" value="{{ item['color'] | upper }}" class="btn {{ item['status'] | lower }}" style="background-color: {{ item['hex']|e }};">
       </form>
     {% endfor %}
 
     <form action="/control">
       <input type="hidden" id="signal" name="signal" value="off">
-      <input type="submit" value="OFF" class="btn" style="background-color: #dedede;color:black">
+      {% set statusON = '' %}
+      {% if 'off' in name %}
+        {% set statusON = 'ON' %}
+      {% endif %}
+      <input type="submit" value="OFF" class="btn btnbase {{ statusON | lower }}">
     </form>
     <h1>SIGNAL: {{name}}</h1>
     
