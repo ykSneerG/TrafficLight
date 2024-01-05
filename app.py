@@ -12,10 +12,12 @@ signals = [
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def myindex():
     return version
-    
+
+
 @app.route('/status')
 def status() -> str:
     result = []
@@ -23,18 +25,20 @@ def status() -> str:
         result.append(item.status())
     return json.dumps(result)
 
+
 @app.route('/control')
 def control():
     # here we want to get the value of user (i.e. ?signal=green)
     signal = request.args.get('signal', '')
-    
+
     for item in signals:
-        item.set_light(Light.ON if item.col == signal else Light.OFF)
+        item.set_light(Light.ON if item.name == signal else Light.OFF)
     stat = json.loads(status())
-    return render_template('control3c.html', name=signal, status=stat, version=version)
+    return render_template('control.html',
+                           name=signal,
+                           status=stat,
+                           version=version)
 
-
-# alloff()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
