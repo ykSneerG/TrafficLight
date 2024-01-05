@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Traffic Light">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
+  <meta name="theme-color" content="#ffa500">
+  <title>Traffic Light</title>
+  <!--<link rel="manifest" href="/static/manifest.json" />-->
+  <link rel="shortcut icon" href="/static/favicon-9.ico">
+  <link rel="apple-touch-icon" type="image/png" href="/static/favicon-9.ico">
+  <link rel="stylesheet" type= "text/css" href= "/static/control3c.css">
+</head>
+
+<body>
+  <div class="traffic">
+
+    {% for item in status %}
+      <form action="/control" method="get">
+        <input type="hidden" name="signal" value="{{ item['color'] }}">
+        <input type="submit" value="{{ item['color'] | upper }}" class="btn" style="background-color: {{ item['hex']|e }};">
+      </form>
+    {% endfor %}
+
+    <form action="/control">
+      <input type="hidden" id="signal" name="signal" value="off">
+      <input type="submit" value="OFF" class="btn" style="background-color: #dedede;color:black">
+    </form>
+    <h1>SIGNAL: {{name}}</h1>
+    
+  </div>
+  
+  <div class="footer">
+    <p id="build">{{ version }}</p>
+  </div>
+  
+</body>
