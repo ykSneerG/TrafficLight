@@ -18,6 +18,7 @@ The signal class requires the following parameters:
 * GPIO pin (for control)
 * Name (this is the name of the button in the HTML view)
 * Color (the color of the button in the HTML view)  
+  
 Since I am controlling a traffic light, I have used the colors and names for the corresponding traffic light colors in my example.
 
 ```python
