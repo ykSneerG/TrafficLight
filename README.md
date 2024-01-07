@@ -2,10 +2,10 @@
 
 Rasperry Pi / 4 channel relay / LED Traffic Light / HTML
 
-Screenshot of the HTML view (iphone)
+Screenshot of the HTML view (iphone)  
 ![alt text](https://github.com/ykSneerG/TrafficLight/blob/main/docs/UI_iphone.PNG "Screenshot iphone App")
 
-The setup
+The setup  
 ![alt text](https://github.com/ykSneerG/TrafficLight/blob/main/docs/IMG_2868.jpg "Photo Setup")
 
 This application uses Python flask and the GPIOs of the Rasperry Pi. The following items must be installed if this is not already the case.
