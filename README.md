@@ -18,8 +18,6 @@ The signal class requires the following parameters:
 * GPIO pin (for control)
 * Name (this is the name of the button in the HTML view)
 * Color (the color of the button in the HTML view)  
-  
-Since I am controlling a traffic light, I have used the colors and names for the corresponding traffic light colors in my example.
 
 ```python
 signals = [
@@ -28,4 +26,8 @@ signals = [
     Signal(16, "green", "#008000")
 ]
 ```
+
+Any number of signals can be added to the array, the view and control is dynamic and will display and use this. This project also works with a 1 or 8 channel relay.
+  
+Since I am controlling a traffic light, I have used the colors and names for the corresponding traffic light colors in my example.
 
