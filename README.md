@@ -13,11 +13,11 @@ pip install flask
 pip install RPi.GPIO
 ```
 
-The channel setup is defined in the "app.py" by the signals array. A signal is instantiated for each channel of the relay.
+The channel setup is defined in the "app.py" by the signals array. A signal is instantiated for each channel of the relay.  
 The signal class requires the following parameters:
 * GPIO pin (for control)
 * Name (this is the name of the button in the HTML view)
-* Color (the color of the button in the HTML view)
+* Color (the color of the button in the HTML view)  
 Since I am controlling a traffic light, I have used the colors and names for the corresponding traffic light colors in my example.
 
 ```python
